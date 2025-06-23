@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Canadian Ipsum | Lorem Ipsum for Canadians, eh</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <div class="mapleLeaf__wrapper">
+          <img
+            src="./assets/2000px-Maple_Leaf.svg.png"
+            alt="red maple leaf"
+            class="mapleLeaf__icon"
+          />
+        </div>
+        <h1>Canadian Ipsum</h1>
+        <h2>Lorem Ipsum for Canadians, eh</h2>
+      </header>
+
+      <div class="section__wrapper">
+        <section class="buttons">
+          <p>Paragraph length:</p>
+          <form id="lengthForm">
+            <div class="button__wrapper">
+              <label class="button__basic">
+                <input
+                  type="radio"
+                  name="length"
+                  value="short"
+                  id="radio__short"
+                  checked
+                />
+                short
+              </label>
+              <label class="button__basic">
+                <input
+                  type="radio"
+                  name="length"
+                  value="medium"
+                  id="radio__medium"
+                />
+                medium
+              </label>
+              <label class="button__basic">
+                <input
+                  type="radio"
+                  name="length"
+                  value="long"
+                  id="radio__long"
+                />
+                long
+              </label>
+            </div>
+            <button type="submit" class="button__basic" id="button__submit">
+              Submit
+            </button>
+          </form>
+        </section>
+
+        <section class="displayIpsum" id="displayIpsum"></section>
+
+        <section>
+          <div
+            class="copyButton hidden"
+            id="button__copy"
+            name="button__copy"
+            data-clipboard-target="#displayParagraph"
+          >
+            <p>copy text</p>
+          </div>
+          <div
+            class="resetButton hidden"
+            id="button__tryAgain"
+            name="button__tryAgain"
+            data-clipboard-target="#displayParagraph"
+          >
+            <p>I'd like something different, please</p>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.6.0/clipboard.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
