@@ -263,12 +263,24 @@ let resetPage = function resetPage() {
 	newRandomArray = [];
 };
 
+// Utility to update .disabled class on .button__basic labels for Firefox
+function updateButtonBasicDisabledState() {
+  document.querySelectorAll('.button__basic').forEach(function(label) {
+    const input = label.querySelector('input[type="radio"]');
+    if (input && input.disabled) {
+      label.classList.add('disabled');
+    } else {
+      label.classList.remove('disabled');
+    }
+  });
+}
+
 // click events
 ipsumApp.events = function () {
   const form = document.getElementById("lengthForm");
   const radios = form.querySelectorAll('input[type="radio"]');
   const submitBtn = document.getElementById("button__submit");
-  const resetBtn = document.getElementById("button__tryAgain");
+  const resetBtn = document.getElementById("button__reset");
 
   form.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -276,6 +288,7 @@ ipsumApp.events = function () {
     // Disable radios and submit
     radios.forEach(r => r.disabled = true);
     submitBtn.disabled = true;
+    updateButtonBasicDisabledState();
     showFinalText();
     if (selected === "short") {
       shortParagraph();
@@ -291,6 +304,7 @@ ipsumApp.events = function () {
     // Enable radios and submit
     radios.forEach(r => r.disabled = false);
     submitBtn.disabled = false;
+    updateButtonBasicDisabledState();
     // Reset the page as before
     resetPage();
   });
@@ -308,4 +322,6 @@ ipsumApp.init = function () {};
 document.addEventListener('DOMContentLoaded', function () {
 	ipsumApp.init();
 	ipsumApp.events();
+	// Update .disabled class on DOMContentLoaded
+	updateButtonBasicDisabledState();
 });
